@@ -1,0 +1,105 @@
+.edgeService {
+    height: 100vh;
+    background: #F1EEEE;
+
+    .mainService {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 100%;
+
+        .serviceHeader {
+
+            h2 {
+                color: $gray;
+            }
+        }
+        .serviceContent {
+            display: flex;
+            height: 80%;
+
+            @include desktop {
+                height: 75%;
+            }
+
+            @include tablets {
+                flex-direction: column;
+            }
+
+            ul {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @include tablets {
+                    flex: 2;
+                }
+
+                li {
+                    padding-right: 90px;
+
+                    @include desktop {
+                        padding-right: 30px;
+                    }
+
+                    @include laptop {
+                        padding-right: 20px;
+                    }
+
+                    @include tablets {
+                        padding-right: 0;
+                    }
+
+                    h3 {
+
+                        @include desktop {
+                            font-size: 17px;
+                        }
+
+                        @include laptop {
+                            font-size: 16px;
+                        }
+                        @include phones {
+                            font-size: 14px;
+                        }
+                    }
+
+                    p {
+                        padding-top: 20px;
+                        font-size: 14px;
+
+                        @include desktop {
+                            padding-top: 8px;
+                            font-size: 12px;
+                        }
+
+                        @include laptop {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            .serviceImage {
+                flex: 1;
+                position: relative;
+                overflow: hidden;
+
+                @include phones {
+                    display: none;
+                }
+
+                img {
+                    position: absolute;
+                    height: 100%;
+
+                    @include tablets {
+                        width: 100%;
+                        margin-top: 35px;
+                    }
+                }
+            }
+        }
+    } 
+}

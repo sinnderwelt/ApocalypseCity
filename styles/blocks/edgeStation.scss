@@ -1,0 +1,45 @@
+.edgeStation {
+    height: 500px;
+    background: url(./assets/images/station.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.4);
+        z-index: 2;
+    }
+
+    .mainStation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        p {
+            font-size: 46px;
+            font-weight: 400;
+            color: $white;
+            text-align: center;
+            max-width: 705px;
+            z-index: 3;
+
+            @include laptop {
+                font-size: 36px;
+            }
+
+            @include tablets {
+                font-size: 32px;
+            }
+
+            @include phones {
+                font-size: 28px;
+            }
+        }
+    }
+}

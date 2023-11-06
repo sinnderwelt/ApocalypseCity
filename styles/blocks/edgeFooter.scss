@@ -1,0 +1,227 @@
+.edgeFooter {
+    height: 730px;
+    background-image: url(./assets/images/footer.png);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 2;
+    }
+
+    footer {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 730px;
+
+        .footerHeader {
+            display: flex;
+            z-index: 3;
+
+            .footerHeaderTitle {
+                flex: 1;
+
+                @include tablets {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                h2 {
+                    color: $white;
+                    font-size: 24px;
+                    font-weight: 700;
+
+                }
+            }
+
+            .footerHeaderTitleContact {
+                
+                @include tablets {
+                    display: none;
+                }
+            }
+        }
+
+        .footerMain {
+            display: flex;
+            z-index: 3;
+
+            @include tablets {
+                flex-direction: column;
+            }
+
+            .footerMainContent {
+                flex: 1;
+
+                @include phones {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                li {
+
+                    @include phones {
+                        text-align: center;
+                    }
+                }
+
+                form {
+                    margin-right: 90px;
+                    margin-bottom: 45px;
+
+                    @include tablets {
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                    }
+
+                    input {
+                        width: 100%;
+                        color:$white;
+                        padding-top: 10px;
+                        border: none;
+                        border-bottom: 2px solid $white;
+                        background-color: inherit;
+                        outline: 0;
+                    }
+                    // убирает стрелочки в input number
+                    input[type="number"]::-webkit-outer-spin-button,
+                    input[type="number"]::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                    }
+
+                    input[type='number'],
+                    input[type="number"]:hover,
+                    input[type="number"]:focus {
+                        appearance: none;
+                        -moz-appearance: textfield;
+                    }
+                }
+
+                .footerRingButton {
+                    margin-top: 120px;
+                    margin-left: 25px; 
+
+                    @include tablets {
+                        margin-bottom: 50px;
+                        margin-top: 60px;
+                        text-align: center;
+                    }
+
+                    @include phones {
+                        margin-top: 55px;
+                        margin-bottom: 15px;
+                        margin-left: 0;
+                    }
+
+                    a{
+                        color: $white;
+                        font-size: 18px;
+                        font-weight: 400;
+
+                        @include tablets {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                li {
+
+                    margin-bottom: 30px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        color: $white;
+                        font-size: 18px;
+                        font-weight: 400;
+
+                        @include tablets {
+                            font-size: 16px;
+                        }
+
+                        @include phones {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footerAbout {
+            display: flex;
+            z-index: 3;
+            
+            @include tablets {
+                margin-top: 5px;
+            }
+
+            @include phones {
+                flex-direction: column;
+            }
+
+            .footerAboutContent {
+                flex: 1;
+
+                @include phones {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                a {
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    @include tablets {
+                        font-size: 12px;    
+                    }
+
+                    img {
+                        height: 70px;
+                        width: 90px;
+                    }
+                }
+            }
+
+            .footerIcons {
+                
+                display: flex;
+                justify-content: center;
+
+                a {
+                    display: flex;
+                    margin-right: 20px;
+
+                    @include phones {
+                        margin-right: 10px;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    svg {
+                        height: 30px;
+                        width: 30px;
+                        fill: white;
+
+                        @include tablets {
+                            height: 25px;
+                            width: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
